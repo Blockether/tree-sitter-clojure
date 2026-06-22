@@ -2,6 +2,20 @@
 
 Bits may be missing and/or inaccurate :)
 
+### v0.0.13-blockether.1 - 2026-06-22
+
+* Tests (Blockether fork)
+  * Add corpus tests for Clojure 1.12 syntax (Java interop / reflection),
+    covering qualified static method symbols / method values
+    (`Integer/parseInt`), instance method symbols (`String/.length`),
+    constructor method values (`String/new`), array class syntax
+    (`String/1`, `int/2` — CLJ-2807), and param-tags metadata
+    (`^[int long]`), plus return-type metadata on the argument vector
+    ([#67](https://github.com/sogaiu/tree-sitter-clojure/issues/67),
+    [#65](https://github.com/sogaiu/tree-sitter-clojure/issues/65))
+  * Grammar is unchanged: these forms already parse correctly as qualified
+    symbols + metadata; the tests lock in that behavior.
+
 ### Future?
 
 * Handle zero bytes?

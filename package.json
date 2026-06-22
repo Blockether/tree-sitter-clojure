@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-clojure",
-  "version": "0.0.13",
+  "version": "0.0.13-blockether.1",
   "description": "Clojure grammar for tree-sitter",
   "tree-sitter": [
     {

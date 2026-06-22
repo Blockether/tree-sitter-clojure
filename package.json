@@ -1,7 +1,16 @@
 {
   "name": "tree-sitter-clojure",
   "version": "0.0.13-blockether.1",
-  "description": "Clojure grammar for tree-sitter",
+  "description": "Clojure grammar for tree-sitter (Blockether fork of sogaiu/tree-sitter-clojure)",
+  "author": "Blockether <contact@blockether.com> (https://github.com/Blockether)",
+  "contributors": [
+    "sogaiu (https://github.com/sogaiu)"
+  ],
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blockether/tree-sitter-clojure.git"
+  },
   "tree-sitter": [
     {
       "scope": "source.clojure",

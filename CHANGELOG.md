@@ -2,6 +2,31 @@
 
 Bits may be missing and/or inaccurate :)
 
+### v0.0.13-blockether.2 - 2026-06-22
+
+Addresses the open upstream issues/PR, one by one:
+
+* Grammar
+  * Drop the single-element `seq(DIGIT)` in `OCTAL_CHAR` that caused
+    `tree-sitter generate` to warn about a redundant seq/choice
+    ([#62](https://github.com/sogaiu/tree-sitter-clojure/issues/62))
+  * Break `str_lit` into `"` open/close delimiters with an inner
+    `str_content` node so grammars can be injected into string contents
+    ([#52](https://github.com/sogaiu/tree-sitter-clojure/issues/52))
+* Packaging
+  * Add a `tree-sitter.json` manifest; removes the missing-manifest generate
+    warning ([#64](https://github.com/sogaiu/tree-sitter-clojure/issues/64))
+  * Credit Blockether as fork author/maintainer (upstream is CC0-1.0);
+    keep sogaiu credited as original author
+* Tests
+  * Adopt the maintainer's canonical Clojure 1.12 corpus tests from PR
+    [#68](https://github.com/sogaiu/tree-sitter-clojure/pull/68)
+    ([#67](https://github.com/sogaiu/tree-sitter-clojure/issues/67))
+  * Document return-type-metadata-on-arg-vector behavior as working-as-intended
+    ([#65](https://github.com/sogaiu/tree-sitter-clojure/issues/65))
+
+Parser kept at ABI 14. 126/126 corpus tests pass.
+
 ### v0.0.13-blockether.1 - 2026-06-22
 
 * Tests (Blockether fork)

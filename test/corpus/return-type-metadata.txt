@@ -1,0 +1,33 @@
+================================================================================
+Return type metadata on a defn argument vector (sogaiu#65)
+================================================================================
+
+; The ^Type return-type hint attaches to the argument VECTOR. Per the upstream
+; discussion in sogaiu#65 this is the correct, consistent behavior — the
+; metadata genuinely lives on the arg vector (it survives read + print-meta),
+; so the grammar associates the meta_lit with the vec_lit rather than the fn.
+(defn to-string ^String [arg] (.toString arg))
+
+--------------------------------------------------------------------------------
+
+(source
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (list_lit
+    (sym_lit
+      (sym_name))
+    (sym_lit
+      (sym_name))
+    (vec_lit
+      (meta_lit
+        (sym_lit
+          (sym_name)))
+      (sym_lit
+        (sym_name)))
+    (list_lit
+      (sym_lit
+        (sym_name))
+      (sym_lit
+        (sym_name)))))

@@ -50,8 +50,10 @@ String/.toUpperCase
       (sym_ns)
       (sym_name))
     (vec_lit
-      (str_lit)
-      (str_lit))))
+      (str_lit
+        (str_content))
+      (str_lit
+        (str_content)))))
 
 ================================================================================
 Functions That Invoke Constructors
@@ -80,4 +82,3 @@ Long/new
       (num_lit)
       (num_lit)
       (num_lit))))
-

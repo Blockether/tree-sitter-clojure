@@ -1,6 +1,6 @@
 ===============================================================================
 No Symbols
-================================================================================
+===============================================================================
 
 ^[] java.lang.String/.toUpperCase
 ^[] String/.toUpperCase
@@ -129,7 +129,8 @@ Using an Underscore
   (sym_lit
     meta: (meta_lit
       value: (vec_lit
-        value: (str_lit)
+        value: (str_lit
+          content: (str_content))
         value: (sym_lit
           name: (sym_name))))
     namespace: (sym_ns)
@@ -155,4 +156,3 @@ Using Unquoting
             name: (sym_name)))))
     namespace: (sym_ns)
     name: (sym_name)))
-

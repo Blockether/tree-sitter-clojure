@@ -153,6 +153,12 @@ const STRING =
                            repeat(regex('[^"\\\\]')))),
                 '"'));
 
+// The inner content of a str_lit (everything between the quotes): runs of
+// non-quote/non-backslash characters (newlines included) and escape sequences.
+const STRING_CONTENT =
+      repeat1(choice(regex('[^"\\\\]'),
+                     seq("\\", regex('.|\n'))));
+
 // XXX: better to match \o378 as a single item
 const OCTAL_CHAR =
       seq("o",
@@ -332,8 +338,16 @@ module.exports = grammar({
     _kwd_marker: $ =>
     choice(KEYWORD_MARK, AUTO_RESOLVE_MARK),
 
+    // A string is broken into open/close delimiters and an inner str_content
+    // node so editors can inject other grammars (e.g. JS into cljs `js*`
+    // strings) into just the contents rather than the quoted form (sogaiu#52).
     str_lit: $ =>
-    STRING,
+    seq(field('open', '"'),
+        optional(field('content', $.str_content)),
+        field('close', '"')),
+
+    str_content: $ =>
+    token.immediate(STRING_CONTENT),
 
     char_lit: $ =>
     CHARACTER,

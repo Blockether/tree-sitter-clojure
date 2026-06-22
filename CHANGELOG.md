@@ -2,6 +2,13 @@
 
 Bits may be missing and/or inaccurate :)
 
+### v0.0.13-blockether.3 - 2026-06-22
+
+* Tags (Blockether fork)
+  * Add queries/tags.scm — Clojure definitions recognised by head symbol
+    (defn/defmacro -> function, defmethod -> method, defrecord/deftype/
+    defprotocol -> type, ns -> namespace). Enables getTagsQuery for Clojure.
+
 ### v0.0.13-blockether.2 - 2026-06-22
 
 Addresses the open upstream issues/PR, one by one:

@@ -12,11 +12,13 @@
         "cljc",
         "cljs"
       ],
-      "injection-regex": "^clojure$"
+      "injection-regex": "^clojure$",
+      "highlights": ["queries/highlights.scm"],
+      "tags": ["queries/tags.scm"]
     }
   ],
   "metadata": {
-    "version": "0.0.13-blockether.3",
+    "version": "0.0.13-blockether.4",
     "license": "CC0-1.0",
     "description": "Clojure(Script) grammar for tree-sitter",
     "authors": [

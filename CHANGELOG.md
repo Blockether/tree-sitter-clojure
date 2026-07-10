@@ -2,6 +2,20 @@
 
 Bits may be missing and/or inaccurate :)
 
+### v0.0.13-blockether.4 - 2026-07-10
+
+* Tags (Blockether fork)
+  * Recognise *any* `def*` head as a definition instead of a fixed whitelist.
+    Now catches `def`/`defonce`, clojure.test + testing macros (`deftest`,
+    `deftest-`, `defdescribe`, `defexpect`, `defspec`) and project `def*`
+    macros (`defdelegate`, ...) — not just `defn`/`defmacro`. Types
+    (`defrecord`/`deftype`/`defprotocol`/`definterface`) and multimethods
+    (`defmethod`/`defmulti`) keep their dedicated categories.
+  * Anchor `@name` to the symbol immediately after the head, so body symbols
+    are no longer mis-tagged as definition names; metadata (`^:private`,
+    `^{:doc ...}`) still resolves since it nests inside the name's `sym_lit`.
+  * Wire `highlights`/`tags` query paths into `tree-sitter.json`.
+
 ### v0.0.13-blockether.3 - 2026-06-22
 
 * Tags (Blockether fork)
